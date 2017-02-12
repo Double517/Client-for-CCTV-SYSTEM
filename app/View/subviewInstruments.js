@@ -83,6 +83,7 @@ export default class InstrumentsView extends Component {
 		        	dataSource={this.state.dataSource}
 		        	renderRow={this._renderRow} 
 		        	style={styles.listHeight}
+		        	showsVerticalScrollIndicator={false}
 		        />
 		    </View>
 	    );
@@ -91,7 +92,7 @@ export default class InstrumentsView extends Component {
 
 const styles = StyleSheet.create({
 	listHeight: {
-		height: height+20,
+		marginBottom:52,
 	},
 
 	itemView: {

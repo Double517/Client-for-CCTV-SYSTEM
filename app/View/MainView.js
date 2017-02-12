@@ -7,8 +7,7 @@ import {
   View,  
 } from 'react-native';
 
-import MainHeader from '../components/MainHeader'
-import InstrumentsView from './subviewInstruments'
+import ViewRouter from './ViewRouter'
 
 const TabNavigatorItem =TabNavigator.Item;
 
@@ -47,8 +46,7 @@ export default class MainView extends Component {
         selectedTitleStyle={{color:'#00cc99'}}  
         onPress={()=>this.onPress(tabName)}  
        >  
-       	<InstrumentsView pageName={this.state.selectedTab} handleResourceMode={this.change_resourceMode.bind(this)} 
-       		resourceMode={this.state.resourceMode}/> 
+          <ViewRouter pageName={tabName}/>
        </TabNavigatorItem>  
      );  
    }  
