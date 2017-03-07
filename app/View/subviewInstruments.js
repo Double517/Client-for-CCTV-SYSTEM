@@ -8,6 +8,7 @@ import {
   Image,
   Dimensions,
   TouchableHighlight,
+  Navigator,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -15,10 +16,36 @@ import Icon from 'react-native-vector-icons/Ionicons';
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
-export default class InstrumentsView extends Component {
+class Item extends Component {
 	constructor(props) {
-	    super(props);
-	    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}); //指定重新render的条件
+		super(props);
+	}
+
+	render() {
+		return(
+			<View style={styles.itemView}>
+				<View style={styles.itemHeader}>
+					<Text style={styles.instrumentsName}>{this.props.data.Name}</Text>
+				</View>
+				<TouchableOpacity onPress={this.props.onSelect}>
+					<Image style={styles.itemImage} source={{uri:this.props.data.Path}}>
+						<View style={styles.itemPlay}>
+							<Icon name='ios-play' size={25} color='#FFF'/>
+						</View>
+					</Image>
+				</TouchableOpacity>
+				<View style={styles.itemFooter}>
+					<Icon name='ios-paper-plane' size={25} color='#00cc99'/>
+				</View>
+			</View>
+		);
+	}
+}
+
+class List extends Component {
+	constructor(props) {
+		super(props);
+		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}); //指定重新render的条件
 	    let str = '{"name":111,"age":"23"}'
 	    this.state = {
 	    	currentPage: this.props.pageName,
@@ -44,6 +71,37 @@ export default class InstrumentsView extends Component {
 	    };
 	}
 
+	_onPressButton() {
+		this.props.navigator.push({Component: 'CCTVView'});
+	}
+
+		
+	_renderRow(rowData) {
+		let Data = rowData;
+		return(
+			<Item onSelect={this._onPressButton.bind(this)} data={Data}/>
+		);
+	}
+
+	render() {
+		return(
+			<ListView
+		        	dataSource={this.state.dataSource}
+		        	renderRow={this._renderRow.bind(this)} 
+		        	style={styles.listHeight}
+		        	showsVerticalScrollIndicator={false}
+		        	keyboardShouldPersistTaps="always"
+
+		    />
+		);
+	}
+}
+
+export default class InstrumentsView extends Component {
+	constructor(props) {
+	    super(props);
+	}
+
 	instrumentsHeader() {
 		return(
 			<View style={styles.instrumentsHeader}>
@@ -54,43 +112,19 @@ export default class InstrumentsView extends Component {
 		);
 	}
 
-	_renderRow(rowData) {
-		let Data = rowData;
-		return(
-			<View style={styles.itemView}>
-				<View style={styles.itemHeader}>
-					<Text style={styles.instrumentsName}>{Data.Name}</Text>
-				</View>
-				<TouchableHighlight onPress={this._onPressButton}>
-					<Image style={styles.itemImage} source={{uri:Data.Path}}>
-						<View style={styles.itemPlay}>
-							<Icon name='ios-play' size={25} color='#FFF'/>
-						</View>
-					</Image>
-				</TouchableHighlight>
-				<View style={styles.itemFooter}>
-					<Icon name='ios-paper-plane' size={25} color='#00cc99'/>
-				</View>
-			</View>
-		);
-	}
 
 	render() {
 	    return (
 	    	<View>
 	    		{this.instrumentsHeader()}
-		    	<ListView
-		        	dataSource={this.state.dataSource}
-		        	renderRow={this._renderRow} 
-		        	style={styles.listHeight}
-		        	showsVerticalScrollIndicator={false}
-		        />
+	    		<List navigator={this.props.navigator}/>
 		    </View>
 	    );
 	}
 }
 
 const styles = StyleSheet.create({
+
 	listHeight: {
 		marginBottom:52,
 	},

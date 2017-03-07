@@ -4,17 +4,31 @@ import {
   Text,
   View,
   Image,
+  Navigator,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import MainView from './View/MainView'
+import MainView from './View/MainView';
+import CCTVView from './View/CCTV_View';
+
 
 
 export default class app extends Component {
 
+  _renderScene(route,navigator) {
+    if(route.Component == 'MainView')
+      return(<MainView navigator={navigator}/>);
+    if(route.Component == 'CCTVView'){
+      return(<CCTVView navigator={navigator}/>);
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <MainView />
+        <Navigator
+              initialRoute={{Component: 'MainView'}}
+              renderScene={this._renderScene}
+        />
       </View>
     );
   }

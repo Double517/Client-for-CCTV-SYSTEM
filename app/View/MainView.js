@@ -5,15 +5,18 @@ import {
   StyleSheet,  
   Text,  
   View,  
+  Navigator,
 } from 'react-native';
 
 import ViewRouter from './ViewRouter'
+import InstrumentsView from './subviewInstruments';
+
 
 const TabNavigatorItem =TabNavigator.Item;
 
 export default class MainView extends Component {
-	constructor(){  
-	    super();  
+	constructor(props){  
+	    super(props);  
 	    this.state={  
 	      selectedTab:'instruments',
 	      resourceMode: 'video',  
@@ -37,18 +40,33 @@ export default class MainView extends Component {
    渲染每项 
    **/  
    renderTabView(title,tabName,tabContent,IconName,IconSelectedName){  
-     return(  
-       <TabNavigatorItem  
-        title={title}  
-        renderIcon={()=><Icon name={IconName} size={19} color='#000'/>}  
-        renderSelectedIcon={()=><Icon name={IconSelectedName} size={19} color='#00cc99'/>}  
-        selected={this.state.selectedTab===tabName}  
-        selectedTitleStyle={{color:'#00cc99'}}  
-        onPress={()=>this.onPress(tabName)}  
-       >  
-          <ViewRouter pageName={tabName}/>
-       </TabNavigatorItem>  
-     );  
+
+    if(title!='设备')
+       return(  
+         <TabNavigatorItem  
+          title={title}  
+          renderIcon={()=><Icon name={IconName} size={19} color='#000'/>}  
+          renderSelectedIcon={()=><Icon name={IconSelectedName} size={19} color='#00cc99'/>}  
+          selected={this.state.selectedTab===tabName}  
+          selectedTitleStyle={{color:'#00cc99'}}  
+          onPress={()=>this.onPress(tabName)}  
+         >  
+            <ViewRouter pageName={tabName}/>
+         </TabNavigatorItem>  
+       );  
+    else
+      return(  
+         <TabNavigatorItem  
+          title={title}  
+          renderIcon={()=><Icon name={IconName} size={19} color='#000'/>}  
+          renderSelectedIcon={()=><Icon name={IconSelectedName} size={19} color='#00cc99'/>}  
+          selected={this.state.selectedTab===tabName}  
+          selectedTitleStyle={{color:'#00cc99'}}  
+          onPress={()=>this.onPress(tabName)}  
+         >  
+            <InstrumentsView navigator={this.props.navigator}/>
+         </TabNavigatorItem>  
+       ); 
    }  
   
    /** 

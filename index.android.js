@@ -4,7 +4,7 @@ import app from './app/main.js'
 import CCTVView from './app/View/CCTV_View.js'
 
 
-AppRegistry.registerComponent('CCTV', () => CCTVView);
+// AppRegistry.registerComponent('CCTV', () => CCTVView);
 
-//AppRegistry.registerComponent('CCTV', () => app);
+AppRegistry.registerComponent('CCTV', () => app);
 

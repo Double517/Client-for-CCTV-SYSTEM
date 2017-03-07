@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import InstrumentsView from './subviewInstruments';
+
 import SettingView from './subviewSetting';
 import PlanView from './subviewPlan';
 import ResourceView from './subviewResource';
@@ -15,9 +15,6 @@ export default class ViewRouter extends Component {
 	}
 
 	render() {
-		if(this.state.currentPage === 'instruments'){
-			return(<InstrumentsView/>);
-		}
 		if(this.state.currentPage === 'resource'){
 			return(<ResourceView/>);
 		}
