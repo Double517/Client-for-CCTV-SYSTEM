@@ -9,7 +9,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import MainView from './View/MainView';
 import CCTVView from './View/CCTV_View';
-
+import AddInstrumentsView from './View/AddInstrumentsView';
 
 
 export default class app extends Component {
@@ -20,6 +20,10 @@ export default class app extends Component {
     if(route.Component == 'CCTVView'){
       return(<CCTVView navigator={navigator}/>);
     }
+    if(route.Component == 'AddInstrumentsView'){
+      return(<AddInstrumentsView navigator={navigator}/>);
+    }
+    
   }
 
   render() {
@@ -28,6 +32,11 @@ export default class app extends Component {
         <Navigator
               initialRoute={{Component: 'MainView'}}
               renderScene={this._renderScene}
+              configureScene={(route) => {
+                let  gestureType = Navigator.SceneConfigs.HorizontalSwipeJump;
+                gestureType.gestures.jumpForward=null;
+                return gestureType;
+              }}
         />
       </View>
     );

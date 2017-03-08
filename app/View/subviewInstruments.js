@@ -53,33 +53,32 @@ class List extends Component {
 	    	dataSource: ds.cloneWithRows([
 	    		{
 				    "Path": "http://i0.hdslb.com/bfs/archive/4037cf8b3bc2367443e022695f79867c39315806.jpg",
-				    "Name": "dfdfdfdfd",
+				    "Name": "设备名称",
 				},
 	    		{
 				    "Path": "http://i0.hdslb.com/bfs/archive/4037cf8b3bc2367443e022695f79867c39315806.jpg",
-				    "Name": "dfdfdfdfd",
+				    "Name": "设备名称",
 				},
 				{
 				    "Path": "http://i0.hdslb.com/bfs/archive/4037cf8b3bc2367443e022695f79867c39315806.jpg",
-				    "Name": "dfdfdfdfd",
+				    "Name": "设备名称",
 				},
 				{
 				    "Path": "http://i0.hdslb.com/bfs/archive/4037cf8b3bc2367443e022695f79867c39315806.jpg",
-				    "Name": "dfdfdfdfd",
+				    "Name": "设备名称",
 				},
 	    	]),
 	    };
 	}
 
-	_onPressButton() {
+	_onPressVideo() {
 		this.props.navigator.push({Component: 'CCTVView'});
 	}
-
 		
 	_renderRow(rowData) {
 		let Data = rowData;
 		return(
-			<Item onSelect={this._onPressButton.bind(this)} data={Data}/>
+			<Item onSelect={this._onPressVideo.bind(this)} data={Data}/>
 		);
 	}
 
@@ -102,16 +101,20 @@ export default class InstrumentsView extends Component {
 	    super(props);
 	}
 
+
+	_onPressAdd() {
+		this.props.navigator.push({Component: 'AddInstrumentsView'});
+	}
+
 	instrumentsHeader() {
 		return(
 			<View style={styles.instrumentsHeader}>
 				<Text style={styles.instrumentsSpace}> </Text>
 				<Text style={styles.instrumentsText}>我的设备</Text>
-				<TouchableOpacity><Text style={styles.instrumentsInsertButton}>+</Text></TouchableOpacity>
+				<TouchableOpacity onPress={this._onPressAdd.bind(this)}><Text style={styles.instrumentsInsertButton}>+</Text></TouchableOpacity>
 			</View>
 		);
 	}
-
 
 	render() {
 	    return (
@@ -167,7 +170,7 @@ const styles = StyleSheet.create({
 	},
 	instrumentsName: {
 		marginLeft: 5,
-		fontSize: 20,
+		fontSize: 18,
 	},
 
 	instrumentsHeader: {
