@@ -15,10 +15,12 @@
 <li><a href="https://github.com/king6cong/react-native-ijkplayer">react-native-ijkplayer</a> </li> 
 <li><a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a> </li> 
 </ul>
-<h2>基本参数</h2>  
-编译环境: macOS sierra  
-React-Native版本: 0.26.3  
-开发工具: Sublime Text  
+<h2>基本参数</h2>
+<ul>  
+<li>编译环境: macOS sierra</li>  
+<li>React-Native版本: 0.26.3</li>  
+<li>开发工具: Sublime Text</li>
+</ul>  
 <h2>应用截图</h2> 
 <table > 
 <tr>
