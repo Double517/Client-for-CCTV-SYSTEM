@@ -14,9 +14,8 @@ export default class SplashScreen extends Component {
         super(props);
         var {navigator} = props;
         var urlgetter = urlSingleton();
-        var username = usernameSingleton();
         var interval = setInterval(() => {
-                            if(username.getUsername()){
+                            if(usernameSingleton().getUsername()){
                                 if(urlgetter.getUrlSet()){
                                     if(username.getUsername() == 'unknown') { 
                                         clearInterval(interval);
