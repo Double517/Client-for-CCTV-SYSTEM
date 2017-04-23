@@ -19,14 +19,19 @@
 编译环境: macOS sierra  
 React-Native版本: 0.26.3  
 开发工具: Sublime Text  
-<h2>应用截图</h2>  
-<img width="216" height="384" style="display: inline-block;" src="./img/splashView.png" />
-<img width="216" height="384" style="display: inline-block;" src="./img/login.png" />
-<img width="216" height="384" style="display: inline-block;" src="./img/InsPage.png" />
-<img width="216" height="384" style="display: inline-block;" src="./img/addIns.png" />
-<img width="216" height="384" style="display: inline-block;" src="./img/onaddIns.png" />
-<img width="216" height="384" style="display: inline-block;" src="./img/deleteIns.png" />
-<img width="216" height="384" style="display: inline-block;" src="./img/logout.png" />  
+<h2>应用截图</h2> 
+<table > 
+<tr>
+<td><img width="216" height="384" style="display: inline-block;" src="./img/splashView.png" /></td>
+<td><img width="216" height="384" style="display: inline-block;" src="./img/login.png" /></td>
+<td><img width="216" height="384" style="display: inline-block;" src="./img/logout.png" /></td> 
+</tr>
+<tr>
+<td><img width="216" height="384" style="display: inline-block;" src="./img/addIns.png" /></td>
+<td><img width="216" height="384" style="display: inline-block;" src="./img/onaddIns.png" /></td>
+<td><img width="216" height="384" style="display: inline-block;" src="./img/deleteIns.png" /></td>
+</tr>
+</table>
 <h2>使用说明</h2>  
 <h3>Android</h3>
 
