@@ -24,7 +24,7 @@ React-Native版本: 0.26.3
 <img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/addIns.png" />
 <img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/onaddIns.png" />
 <img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/deleteIns.png" />
-<img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/loginout.png" />  
+<img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/logout.png" />  
 ##使用说明  
 ###Android  
     git clone https://github.com/Ultrasteve/Client-for-CCTV-SYSTEM.git
