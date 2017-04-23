@@ -29,7 +29,7 @@
 <td><img width="216" height="384" style="display: inline-block;" src="./img/logout.png" /></td> 
 </tr>
 <tr>
-<td><img width="216" height="384" style="display: inline-block;" src="./img/addIns.png" /></td>
+<td><img width="216" height="384" style="display: inline-block;" src="./img/cctvView.png" /></td>
 <td><img width="216" height="384" style="display: inline-block;" src="./img/onaddIns.png" /></td>
 <td><img width="216" height="384" style="display: inline-block;" src="./img/deleteIns.png" /></td>
 </tr>
