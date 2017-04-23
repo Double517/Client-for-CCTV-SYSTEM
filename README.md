@@ -17,17 +17,17 @@
 编译环境: macOS sierra  
 React-Native版本: 0.26.3  
 开发工具: Sublime Text  
-<h2>应用截图  
-<img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/splashView.png" />
-<img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/login.png" />
-<img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/InsPage.png" />
-<img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/addIns.png" />
-<img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/onaddIns.png" />
-<img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/deleteIns.png" />
-<img style="margin-bottom: 50px; zoom: 0.2; display: inline-block;" src="./img/logout.png" />  
+<h2>应用截图</h2>  
+<img style="margin-bottom: 50px;zoom: 0.2;display: inline-block;" src="./img/splashView.png" />
+<img style="margin-bottom: 50px;zoom: 0.2;display: inline-block;" src="./img/login.png" />
+<img style="margin-bottom: 50px;zoom: 0.2;display: inline-block;" src="./img/InsPage.png" />
+<img style="margin-bottom: 50px;zoom: 0.2;display: inline-block;" src="./img/addIns.png" />
+<img style="margin-bottom: 50px;zoom: 0.2;display: inline-block;" src="./img/onaddIns.png" />
+<img style="margin-bottom: 50px;zoom: 0.2;display: inline-block;" src="./img/deleteIns.png" />
+<img style="margin-bottom: 50px;zoom: 0.2;display: inline-block;" src="./img/logout.png" />  
 <h2>使用说明</h2>  
 <h3>Android</h3>
-  
+
     git clone https://github.com/Ultrasteve/Client-for-CCTV-SYSTEM.git
     cd Client-for-CCTV-SYSTEM/Example
     npm install  --save
